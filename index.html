@@ -3,50 +3,168 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Exclusive Offer | Cotsco Deal</title>
+<title>Exclusive Offer | Costco Deal</title>
 <style>
+  @import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap");
   * { box-sizing: border-box; margin: 0; padding: 0; }
+
   body {
-    font-family: "Geist", system-ui, sans-serif;
-    background: #f4f6f9;
-    color: #1a1f2b;
+    font-family: "Figtree", "Helvetica Neue", Arial, sans-serif;
+    background: #f4f7fa;
+    color: #17253a;
     line-height: 1.5;
   }
-  main { max-width: 480px; margin: 0 auto; padding: 32px 20px 48px; display: flex; flex-direction: column; gap: 24px; }
+
+  main {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 32px 20px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
   .brand { text-align: center; }
-  .brand img { height: 48px; width: auto; display: block; margin: 0 auto; }
-  h1 { font-size: 28px; line-height: 1.2; text-align: center; }
-  h1 span { color: #0058a3; }
-  .sub { text-align: center; color: #4a5263; }
+  .brand img {
+    height: 48px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 28px;
+    line-height: 1.2;
+    text-align: center;
+    color: #17253a;
+  }
+
+  h1 span { color: #005DAA; }
+
+  .sub {
+    text-align: center;
+    color: #526477;
+  }
+
   .card {
-    background: #fff; border-radius: 14px; padding: 24px;
-    box-shadow: 0 2px 10px rgba(0,0,0,.06);
-    display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center;
+    background: #ffffff;
+    border: 1px solid #d8e5f2;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 3px 14px rgba(0,93,170,.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
   }
-  .card .label { font-size: 14px; color: #4a5263; }
-  .card .value { font-size: 44px; font-weight: 800; color: #0058a3; }
+
+  .card .label {
+    font-size: 14px;
+    color: #526477;
+  }
+
+  .card .value {
+    font-size: 44px;
+    font-weight: 800;
+    color: #17253a;
+  }
+
   .btn {
-    display: block; width: 100%; padding: 16px; border: 0; border-radius: 10px;
-    background: #e31837; color: #fff; font-size: 17px; font-weight: 700; cursor: pointer;
-    text-align: center; text-decoration: none;
+    display: block;
+    width: 100%;
+    padding: 16px;
+    border: 0;
+    border-radius: 8px;
+    background: #005DAA;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background .2s ease, transform .2s ease;
   }
-  .btn:hover { background: #c4122d; }
-  .btn:focus-visible { outline: 3px solid #0058a3; outline-offset: 2px; }
-  h2 { font-size: 20px; margin-bottom: 12px; }
-  ol { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-  ol li { display: flex; align-items: center; gap: 12px; background: #fff; padding: 12px 14px; border-radius: 10px; }
+
+  .btn:hover {
+    background: #004C87;
+    transform: translateY(-1px);
+  }
+
+  .btn:focus-visible {
+    outline: 3px solid #E31837;
+    outline-offset: 3px;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #17253a;
+  }
+
+  ol {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  ol li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #ffffff;
+    border: 1px solid #d8e5f2;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-family: "Figtree", "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.45;
+  }
+
   ol li b {
-    flex: none; width: 28px; height: 28px; border-radius: 50%;
-    background: #0058a3; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 14px;
+    flex: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #E31837;
+    color: #17253a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
   }
-  details { background: #fff; border-radius: 10px; padding: 14px; margin-bottom: 10px; }
-  summary { font-weight: 600; cursor: pointer; }
-  details p { margin-top: 8px; color: #4a5263; font-size: 15px; }
-</style>
-</head>
+
+  details {
+    background: #ffffff;
+    border: 1px solid #d8e5f2;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 10px;
+  }
+
+  summary {
+    font-family: "Figtree", "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    cursor: pointer;
+    color: #17253a;
+  }
+
+  details p {
+    font-family: "Figtree", "Helvetica Neue", Arial, sans-serif;
+    margin-top: 8px;
+    color: #526477;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+</style></head>
 <body>
 <main>
-  <div class="brand"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Costco_Wholesale_logo_2010-10-26.svg/1280px-Costco_Wholesale_logo_2010-10-26.svg.png?utm_source=fr.wikipedia.org&utm_campaign=index&utm_content=thumbnail" alt="PerkPath" /></div>
+  <div class="brand"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Costco_Wholesale_logo_2010-10-26.svg/1280px-Costco_Wholesale_logo_2010-10-26.svg.png?utm_source=fr.wikipedia.org&utm_campaign=index&utm_content=thumbnail" alt="Costco logo" style="height:48px;width:auto;max-width:220px;display:block;margin:0 auto"></div>
 
   <header>
     <h1>Claim Your <span>$500</span> Costco
