@@ -1,209 +1,444 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Exclusive Offer | Costco Deal</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f7f7">
+
+<title>Costco $500 Reward</title>
+
+<!-- INTER FONT -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap");
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --red: #005daa;
+  --red-dark: #003f7d;
+  --ink: #171717;
+  --muted: #666;
+  --line: #e7e7e7;
+  --background: #f7f7f7;
+}
 
-  body {
-    font-family: "Figtree", "Helvetica Neue", Arial, sans-serif;
-    background: #f4f7fa;
-    color: #17253a;
-    line-height: 1.5;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
 
+html {
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--background);
+  color: var(--ink);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button, a, input, select, textarea {
+  font-family: "Inter", sans-serif;
+}
+
+main {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* BRAND */
+
+.brand {
+  text-align: center;
+}
+
+.brand img {
+  height: 75px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* HEADER */
+
+header h1 {
+  font-size: 29px;
+  line-height: 1.25;
+  text-align: center;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.8px;
+}
+
+header h1 span {
+  color: var(--red);
+}
+
+.sub {
+  text-align: center;
+  color: var(--muted);
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* GIFT CARD */
+
+.card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 215px;
+  padding: 27px 24px;
+  border-radius: 18px;
+  background: linear-gradient(
+    135deg,
+    #003f7d 0%,
+    #005daa 55%,
+    #1686cf 100%
+  );
+  box-shadow: 0 9px 25px rgba(0,93,170,.19);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+  color: white;
+}
+
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(255,255,255,.17);
+  border-radius: 50%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.card::before {
+  width: 230px;
+  height: 230px;
+  top: -135px;
+  right: -65px;
+}
+
+.card::after {
+  width: 180px;
+  height: 180px;
+  bottom: -125px;
+  left: -60px;
+}
+
+.gift-icon img {
+  width: 200px;
+  height: 35px;
+  object-fit: contain;
+  display: block;
+}
+
+.card .label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,.88);
+}
+
+.card .value {
+  font-size: 55px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -2px;
+  color: #fff;
+}
+
+.card .card-footer {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,.85);
+  margin-top: 6px;
+}
+
+/* CTA BUTTON */
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 17px 20px;
+  border: none;
+  border-radius: 9px;
+  background: var(--red);
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,93,170,.15);
+  transition: background .2s ease, transform .2s ease;
+}
+
+.btn:hover {
+  background: var(--red-dark);
+  transform: translateY(-2px);
+}
+
+.btn:focus-visible {
+  outline: 3px solid #171717;
+  outline-offset: 3px;
+}
+
+/* SECTIONS */
+
+section h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 13px;
+  color: var(--ink);
+  letter-spacing: -0.4px;
+}
+
+/* HOW IT WORKS */
+
+ol {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+ol li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  padding: 13px 14px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+ol li b {
+  flex: 0 0 29px;
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  background: var(--red);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* FAQ */
+
+details {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+summary {
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--ink);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: "+";
+  font-size: 21px;
+  color: var(--red);
+  font-weight: 500;
+}
+
+details[open] summary::after {
+  content: "−";
+}
+
+details p {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* DISCLOSURE */
+
+.disclosure {
+  text-align: center;
+  color: #777;
+  font-size: 11px;
+  line-height: 1.6;
+  padding: 0 8px;
+}
+
+/* MOBILE */
+
+@media (max-width: 380px) {
   main {
-    max-width: 480px;
-    margin: 0 auto;
-    padding: 32px 20px 48px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+    padding: 25px 16px 35px;
   }
 
-  .brand { text-align: center; }
-  .brand img {
-    height: 48px;
-    width: auto;
-    display: block;
-    margin: 0 auto;
-  }
-
-  h1 {
-    font-size: 28px;
-    line-height: 1.2;
-    text-align: center;
-    color: #17253a;
-  }
-
-  h1 span { color: #005DAA; }
-
-  .sub {
-    text-align: center;
-    color: #526477;
-  }
-
-  .card {
-    background: #ffffff;
-    border: 1px solid #d8e5f2;
-    border-radius: 14px;
-    padding: 24px;
-    box-shadow: 0 3px 14px rgba(0,93,170,.08);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    text-align: center;
-  }
-
-  .card .label {
-    font-size: 14px;
-    color: #526477;
+  header h1 {
+    font-size: 26px;
   }
 
   .card .value {
-    font-size: 44px;
-    font-weight: 800;
-    color: #17253a;
+    font-size: 49px;
   }
+}
+</style>
+</head>
 
-  .btn {
-    display: block;
-    width: 100%;
-    padding: 16px;
-    border: 0;
-    border-radius: 8px;
-    background: #005DAA;
-    color: #ffffff;
-    font-size: 17px;
-    font-weight: 700;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    transition: background .2s ease, transform .2s ease;
-  }
-
-  .btn:hover {
-    background: #004C87;
-    transform: translateY(-1px);
-  }
-
-  .btn:focus-visible {
-    outline: 3px solid #E31837;
-    outline-offset: 3px;
-  }
-
-  h2 {
-    font-size: 20px;
-    margin-bottom: 12px;
-    color: #17253a;
-  }
-
-  ol {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  ol li {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background: #ffffff;
-    border: 1px solid #d8e5f2;
-    padding: 12px 14px;
-    border-radius: 10px;
-    font-family: "Figtree", "Helvetica Neue", Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.45;
-  }
-
-  ol li b {
-    flex: none;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: #E31837;
-    color: #17253a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-  }
-
-  details {
-    background: #ffffff;
-    border: 1px solid #d8e5f2;
-    border-radius: 10px;
-    padding: 14px;
-    margin-bottom: 10px;
-  }
-
-  summary {
-    font-family: "Figtree", "Helvetica Neue", Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1.4;
-    cursor: pointer;
-    color: #17253a;
-  }
-
-  details p {
-    font-family: "Figtree", "Helvetica Neue", Arial, sans-serif;
-    margin-top: 8px;
-    color: #526477;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 1.6;
-  }
-</style></head>
 <body>
-<main>
-  <div class="brand"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Costco_Wholesale_logo_2010-10-26.svg/1280px-Costco_Wholesale_logo_2010-10-26.svg.png?utm_source=fr.wikipedia.org&utm_campaign=index&utm_content=thumbnail" alt="Costco logo" style="height:48px;width:auto;max-width:220px;display:block;margin:0 auto"></div>
 
+<main>
+
+  <!-- COSTCO BRAND -->
+  <div class="brand">
+    <img
+      src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Costco_Wholesale_logo_2010-10-26.svg/1280px-Costco_Wholesale_logo_2010-10-26.svg.png?_=20180311000607"
+      alt="Costco logo"
+    >
+  </div>
+
+  <!-- MAIN HEADING -->
   <header>
-    <h1>Claim Your <span>$500</span> Costco
-Discount Today.</h1>
-    <p class="sub">Your $500 Discount is waiting&mdash;tap below to claim it!</p>
+    <h1>
+      Claim Your
+      <span>$500</span>
+      Costco Gift Card.
+    </h1>
+
+    <p class="sub">
+      Get ready for the holidays with Costco shopping inspiration for books, games, music, and more.
+      Find something for everyone on your list.
+    </p>
   </header>
 
-  <section class="card" aria-label="Reward">
-    <span class="label">Digital Reward &middot; Reward Value</span>
+  <!-- REWARD CARD -->
+  <section class="card" aria-label="Promotional reward preview">
+
+    <div class="gift-icon">
+      <img
+        src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Costco_Wholesale_logo_2010-10-26.svg/1280px-Costco_Wholesale_logo_2010-10-26.svg.png?_=20180311000607"
+        alt="Costco logo"
+      >
+    </div>
+
+    <span class="label">COSTCO GIFT CARD</span>
+
     <span class="value">$500</span>
+
+    <span class="card-footer">
+      ENJOY SHOPPING AT COSTCO
+    </span>
+
   </section>
 
-  <a class="btn" href="https://linkthem.net/?offer_id=4452&aff_id=181591" target="_blank" rel="noopener sponsored">Continue to Next Step</a>
+  <!-- CTA -->
+  <a
+    class="btn"
+    href="https://linkthem.net/?offer_id=4452&aff_id=181591"
+    target="_blank"
+    rel="noopener sponsored"
+  >
+    Continue to Next Step →
+  </a>
 
+  <!-- HOW IT WORKS -->
   <section>
+
     <h2>How It Works</h2>
+
     <ol>
-      <li><b>1</b> Click &ldquo;Continue to Next Step&rdquo;</li>
-      <li><b>2</b> Enter your email</li>
-      <li><b>3</b> Complete 5+ Deals to Unlock more rewards</li>
-      <li><b>4</b> Claim your reward</li>
+      <li>
+        <b>1</b>
+        Click "Continue to Next Step"
+      </li>
+
+      <li>
+        <b>2</b>
+        Enter your email
+      </li>
+
+      <li>
+        <b>3</b>
+        Complete 2 - 5 Deals to Unlock more rewards
+      </li>
+
+      <li>
+        <b>4</b>
+        Claim your GIFT Card
+      </li>
     </ol>
+
   </section>
 
+  <!-- FAQ -->
   <section>
+
     <h2>Frequently Asked Questions</h2>
+
     <details>
       <summary>What are deals?</summary>
-      <p>Simple tasks like app downloads, surveys, or trial subscriptions. Each deal is straightforward and designed to be completed quickly.</p>
+      <p>
+        Simple tasks like app downloads, surveys, or trial subscriptions.
+        Each deal is straightforward and designed to be completed quickly.
+      </p>
     </details>
+
     <details>
       <summary>How many do I need?</summary>
-      <p>Complete 5+ deals to receive your reward. The more deals you complete, the faster you can receive your discount code.</p>
+      <p>
+        Complete 2-5 deals to receive your reward.
+        The more deals you complete, the faster you can receive your discount code.
+      </p>
     </details>
+
     <details>
       <summary>How long do they take?</summary>
-      <p>Typically 10-20 minutes per deal. Most users complete all required deals within a few hours, spread across a day or two.</p>
+      <p>
+        Typically 10-20 minutes per deal. Most users complete all required deals within a few hours, spread across a day or two.
+      </p>
     </details>
+
   </section>
+
 </main>
+
 </body>
 </html>
