@@ -328,6 +328,57 @@ details p {
     font-size: 49px;
   }
 }
+
+/* GIFT CARD ENTRANCE ANIMATION */
+.card {
+  animation: cardEntrance 0.8s ease-out both;
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CTA BUTTON ATTENTION ANIMATION */
+.btn {
+  animation: buttonPulse 2.8s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes buttonPulse {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(0,93,170,.15);
+  }
+  50% {
+    box-shadow: 0 6px 20px rgba(0,93,170,.35);
+  }
+}
+
+/* CTA HOVER EFFECT */
+.btn:hover {
+  background: var(--red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,93,170,.3);
+}
+
+/* ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .btn {
+    animation: none;
+  }
+
+  .btn {
+    transition: none;
+  }
+}
+
 </style>
 </head>
 
