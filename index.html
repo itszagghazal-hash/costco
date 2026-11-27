@@ -380,11 +380,25 @@ details p {
  <!-- CTA -->
 <a
   class="btn"
-  href="https://giftclick.org/?offer_id=1322&aff_id=181591"
+  href="https://linkthem.net/?offer_id=1322&aff_id=181591"
+  id="main-cta"
   rel="noopener sponsored"
 >
   Continue to Next Step →
 </a>
+
+<script>
+  document.getElementById("main-cta").addEventListener("click", function () {
+    if (window.va) {
+      window.va("event", {
+        name: "CTA Click",
+        data: {
+          button: "Costco Reward"
+        }
+      });
+    }
+  });
+</script>
 
   <!-- HOW IT WORKS -->
   <section>
