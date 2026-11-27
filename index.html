@@ -13,6 +13,23 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+<!-- GOOGLE ANALYTICS 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WDC69CEK2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WDC69CEK2B');
+</script>
+
+<!-- VERCEL WEB ANALYTICS -->
+<script>
+  window.va = window.va || function () {
+    (window.vaq = window.vaq || []).push(arguments);
+  };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+
 <style>
 :root {
   --red: #005daa;
@@ -321,14 +338,6 @@ details p {
   }
 }
 </style>
-  
-<script>
-  window.va = window.va || function () {
-    (window.vaq = window.vaq || []).push(arguments);
-  };
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
-
 </head>
 
 <body>
@@ -377,28 +386,28 @@ details p {
 
   </section>
 
- <!-- CTA -->
-<a
-  class="btn"
-  href="https://linkthem.net/?offer_id=1322&aff_id=181591"
-  id="main-cta"
-  rel="noopener sponsored"
->
-  Continue to Next Step →
-</a>
+  <!-- CTA -->
+  <a
+    class="btn"
+    href="https://linkthem.net/?offer_id=1322&aff_id=181591"
+    id="main-cta"
+    rel="noopener sponsored"
+  >
+    Continue to Next Step →
+  </a>
 
-<script>
-  document.getElementById("main-cta").addEventListener("click", function () {
-    if (window.va) {
-      window.va("event", {
-        name: "CTA Click",
-        data: {
-          button: "Costco Reward"
-        }
-      });
-    }
-  });
-</script>
+  <!-- GOOGLE ANALYTICS CTA CLICK TRACKER -->
+  <script>
+    document.getElementById("main-cta").addEventListener("click", function () {
+      if (typeof gtag === "function") {
+        gtag("event", "cta_click", {
+          event_category: "engagement",
+          event_label: "Costco Reward",
+          button_text: "Continue to Next Step"
+        });
+      }
+    });
+  </script>
 
   <!-- HOW IT WORKS -->
   <section>
